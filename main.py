@@ -85,8 +85,14 @@ def handle_text(message):
         bot.send_message(message.chat.id, "Не совем тебя понял")
 
 
+import os
 
-try:
-    bot.polling(none_stop=True, interval=1)
-except Exception:
-    raise
+TOKEN = "450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0"
+PORT = int(os.environ.get('PORT', '5000'))
+updater = Updater(TOKEN)
+add handlers
+updater.start_webhook(listen="0.0.0.0",
+                      port=PORT,
+                      url_path=TOKEN)
+updater.bot.set_webhook("https://robindickbot.herokuapp.com/" + TOKEN)
+updater.idle()
