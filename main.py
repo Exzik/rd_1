@@ -1,5 +1,5 @@
 import telebot
-
+import os
 
 
 bot = telebot.TeleBot("450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0")
@@ -85,7 +85,7 @@ def handle_text(message):
         bot.send_message(message.chat.id, "Не совем тебя понял")
 
 
-import os
+
 
 TOKEN = "450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0"
 PORT = int(os.environ.get('PORT', '5000'))
