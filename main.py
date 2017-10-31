@@ -7,8 +7,6 @@ bot = telebot.TeleBot("450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0")
 upd = bot.get_updates()
 print (upd)
 
-message_from_user = last_upd.message
-print(message_from_user)
 
 print(bot.get_me())
 
