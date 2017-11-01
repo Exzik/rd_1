@@ -90,7 +90,7 @@ def handle_text(message):
 TOKEN = "450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0"
 PORT = int(os.environ.get('PORT', '5000'))
 updater = Updater(TOKEN)
-add handlers
+
 updater.start_webhook(listen="0.0.0.0",
                       port=PORT,
                       url_path=TOKEN)
