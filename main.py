@@ -1,14 +1,12 @@
+
 import telebot
 import os
+from flask import Flask, request
+server = Flask(__name_)
 
 
 bot = telebot.TeleBot("450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0")
 
-upd = bot.get_updates()
-print (upd)
-
-
-print(bot.get_me())
 
 def log(message,answer):
     print("/n ------")
@@ -84,15 +82,15 @@ def handle_text(message):
 
         bot.send_message(message.chat.id, "Не совем тебя понял")
 
+@server.route("/450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0", methods=['POST'])
+def getMessage():
+    bot.process_new_updates([telebot.types.Update.de_json(request.stream.read().decode("utf-8"))])
+    return "!", 200
 
+@server.route("/")
+def webhook():
+    bot.remove_webhook()
+    bot.set_webhook(url="https://robindickbot.herokuapp.com/450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0")
+    return "!", 200
 
-
-TOKEN = "450973265:AAExas5j2FfvwU7BGjJ1NnE5uaARsoYpVT0"
-PORT = int(os.environ.get('PORT', '5000'))
-updater = Updater(TOKEN)
-
-updater.start_webhook(listen="0.0.0.0",
-                      port=PORT,
-                      url_path=TOKEN)
-updater.bot.set_webhook("https://robindickbot.herokuapp.com/" + TOKEN)
-updater.idle()
+server.run(host="0.0.0.0", port=os.environ.get('PORT', 5000))
