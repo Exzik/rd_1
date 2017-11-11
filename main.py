@@ -31,9 +31,6 @@ def handle_text(message):
     log(message, answer)
     bot.send_message(message.chat.id, answer)
 
-@bot.message_handler(commands=['analitik'])
-def messages.chatFull(username)
-    
 
 
 @bot.message_handler(content_types=['text'])
