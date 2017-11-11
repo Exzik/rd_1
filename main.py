@@ -31,11 +31,9 @@ def handle_text(message):
     log(message, answer)
     bot.send_message(message.chat.id, answer)
 
-@bot.message_handler(commands=['settings'])
-def handle_text(message):
-    answer = "Тут пусто)"
-    log(message, answer)
-    bot.send_message(message.chat.id,answer )
+@bot.message_handler(commands=['analitik'])
+def messages.chatFull(username)
+    
 
 
 @bot.message_handler(content_types=['text'])
