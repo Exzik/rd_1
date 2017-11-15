@@ -37,40 +37,40 @@ def handle_text(message):
 def handle_text(message):
 
     if message.text == "хочу промокод" :
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
 
 
     elif message.text == "Хочу промокод":
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
 
 
     elif message.text == "Хочу промо код":
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
     elif message.text == "хочу промокод":
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
 
     elif message.text == " промо ":
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
     elif message.text == "Хочу промо-код ":
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
     elif message.text == "хочу промо код" :
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
     elif message.text == "хочу промо-код":
-        answer = "Open20"
+        answer = "BFriday"
         log(message, answer)
         bot.send_message(message.chat.id, answer)
     else:
